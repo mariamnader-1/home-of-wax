@@ -3,7 +3,14 @@ import { useEffect, useRef, useState } from 'react'
 import ProductModal, { type Product } from './ProductModal'
 
 const products: Product[] = [
-  { id:1, name:'Soy Wax', category:'Base Waxes', price:'$7.00', weight:'1 kg', description:'Natural soy wax made from hydrogenated soybean oil. Ideal for container candles with excellent scent throw and a clean burn.', specs:{'Melt Point':'49–55°C','Type':'Container Wax','Origin':'Soybean Oil','Fragrance Load':'Up to 10%','Color':'Creamy White'} },
+  { id:1,
+  name:'Soy Wax',
+  image:'/soy-wax.jpg',
+  category:'Base Waxes',
+  price:'$7.00',
+  weight:'1 kg',
+  description:'Natural soy wax made from hydrogenated soybean oil. Ideal for container candles with excellent scent throw and a clean burn.',
+  specs:{'Melt Point':'49–55°C','Type':'Container Wax','Origin':'Soybean Oil','Fragrance Load':'Up to 10%','Color':'Creamy White'} },
   { id:2, name:'Beeswax', category:'Base Waxes', price:'$7.00', weight:'1 kg', description:'Pure natural beeswax with a warm honey-like scent. Burns clean and slow, great for pillar and taper candles.', specs:{'Melt Point':'62–65°C','Type':'Pillar / Container','Origin':'Natural Bees','Fragrance Load':'Up to 6%','Color':'Natural Yellow'} },
   { id:3, name:'Paraffin Wax', category:'Base Waxes', price:'$3.00', weight:'1 kg', description:'Classic paraffin wax — the most versatile candle-making wax. Strong scent throw and excellent color retention.', specs:{'Melt Point':'46–68°C','Type':'Container / Pillar','Origin':'Petroleum','Fragrance Load':'Up to 12%','Color':'Bright White'} },
   { id:4, name:'Sand Wax', category:'Base Waxes', price:'$7.00', weight:'1 kg', description:'Granular sand wax for textured rustic candles. Creates beautiful sandy finishes and unique visual effects.', specs:{'Melt Point':'55–60°C','Type':'Specialty / Pillar','Origin':'Synthetic Blend','Fragrance Load':'Up to 8%','Color':'Off White'} },
