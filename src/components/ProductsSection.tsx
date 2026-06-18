@@ -41,6 +41,7 @@ export default function ProductsSection() {
             <p style={{ color:'#8a7a6a', fontSize:15, maxWidth:440, margin:'0 auto', lineHeight:1.75 }}>All materials are quality-tested and sourced specifically for candle making.</p>
           </div>
         </FadeIn>
+
         <FadeIn delay={0.1}>
           <div style={{ display:'flex', gap:10, justifyContent:'center', marginBottom:52, flexWrap:'wrap' }}>
             {categories.map(c => (
@@ -50,22 +51,34 @@ export default function ProductsSection() {
             ))}
           </div>
         </FadeIn>
+
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:22 }}>
           {filtered.map((p,i) => (
             <FadeIn key={p.id} delay={i*0.07}>
-              <div onClick={()=>setSel(p)} style={{ background:'#fff', borderRadius:14, padding:30, border:'1px solid #EDE8DC', boxShadow:'0 4px 24px rgba(0,0,0,0.06)', cursor:'pointer', position:'relative', overflow:'hidden', transition:'transform 0.3s,box-shadow 0.3s' }}
+              <div onClick={()=>setSel(p)}
+                style={{ background:'#fff', borderRadius:14, overflow:'hidden', border:'1px solid #EDE8DC', boxShadow:'0 4px 24px rgba(0,0,0,0.06)', cursor:'pointer', transition:'transform 0.3s,box-shadow 0.3s' }}
                 onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-8px)';e.currentTarget.style.boxShadow='0 24px 60px rgba(0,0,0,0.14)';}}
                 onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.boxShadow='0 4px 24px rgba(0,0,0,0.06)';}}>
-                <div style={{ position:'absolute', top:0, right:0, width:60, height:60, background:'linear-gradient(135deg,transparent 50%,rgba(184,120,26,0.07) 50%)', borderRadius:'0 14px 0 0', pointerEvents:'none' }}/>
-                <div style={{ fontSize:9, letterSpacing:3, textTransform:'uppercase', color:'#B8781A', marginBottom:8, fontWeight:700 }}>{p.category}</div>
-                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:12 }}>
-                  <h3 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:26, fontWeight:700, color:'#1A1208', lineHeight:1.1 }}>{p.name}</h3>
-                  <span style={{ background:'#F0EBE0', borderRadius:100, padding:'4px 11px', fontSize:11, color:'#8a7a6a', fontWeight:500, whiteSpace:'nowrap', marginLeft:8, flexShrink:0 }}>{p.weight}</span>
+
+                {/* Product Image */}
+                <div style={{ width:'100%', height:200, overflow:'hidden', background:'#EDE8DC' }}>
+                  <img src={p.image} alt={p.name} style={{ width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.4s ease' }}
+                    onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.05)')}
+                    onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
                 </div>
-                <p style={{ color:'#8a7a6a', fontSize:13, lineHeight:1.65, marginBottom:22 }}>{p.description.slice(0,85)}...</p>
-                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', borderTop:'1px solid #EDE8DC', paddingTop:16 }}>
-                  <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:28, color:'#B8781A', fontWeight:700 }}>{p.price}</span>
-                  <span style={{ fontSize:10, letterSpacing:2, textTransform:'uppercase', color:'#1A1208', fontWeight:700, borderBottom:'1.5px solid #1A1208', paddingBottom:1 }}>View Specs</span>
+
+                {/* Card Content */}
+                <div style={{ padding:24 }}>
+                  <div style={{ fontSize:9, letterSpacing:3, textTransform:'uppercase', color:'#B8781A', marginBottom:8, fontWeight:700 }}>{p.category}</div>
+                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:10 }}>
+                    <h3 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:24, fontWeight:700, color:'#1A1208', lineHeight:1.1 }}>{p.name}</h3>
+                    <span style={{ background:'#F0EBE0', borderRadius:100, padding:'4px 11px', fontSize:11, color:'#8a7a6a', fontWeight:500, whiteSpace:'nowrap', marginLeft:8, flexShrink:0 }}>{p.weight}</span>
+                  </div>
+                  <p style={{ color:'#8a7a6a', fontSize:13, lineHeight:1.65, marginBottom:20 }}>{p.description.slice(0,85)}...</p>
+                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', borderTop:'1px solid #EDE8DC', paddingTop:14 }}>
+                    <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:26, color:'#B8781A', fontWeight:700 }}>{p.price}</span>
+                    <span style={{ fontSize:10, letterSpacing:2, textTransform:'uppercase', color:'#1A1208', fontWeight:700, borderBottom:'1.5px solid #1A1208', paddingBottom:1 }}>View Specs</span>
+                  </div>
                 </div>
               </div>
             </FadeIn>
