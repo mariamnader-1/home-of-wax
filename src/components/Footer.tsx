@@ -16,7 +16,7 @@ export default function Footer() {
                 {label}
               </button>
             ))}
-            <a href="https://www.instagram.com/home-of-wax-lebanon" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/home_of_wax_lebanon" target="_blank" rel="noopener noreferrer"
               style={{ display:'inline-flex', alignItems:'center', gap:7, padding:'9px 18px', background:'rgba(184,120,26,0.15)', border:'1px solid rgba(184,120,26,0.3)', borderRadius:100, color:'#B8781A', textDecoration:'none', fontSize:11, letterSpacing:2, textTransform:'uppercase', fontWeight:700, fontFamily:"'DM Sans',sans-serif", transition:'all 0.25s' }}
               onMouseEnter={e=>{ e.currentTarget.style.background='#B8781A'; e.currentTarget.style.color='#fff'; }}
               onMouseLeave={e=>{ e.currentTarget.style.background='rgba(184,120,26,0.15)'; e.currentTarget.style.color='#B8781A'; }}>
