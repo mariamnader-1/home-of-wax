@@ -32,14 +32,38 @@ export default function ContactSection() {
 
   return (
     <section id="contact" style={{ padding:'100px 32px', background:'#F8F4EE' }}>
-      <div style={{ maxWidth:640, margin:'0 auto' }}>
+      <div style={{ maxWidth:680, margin:'0 auto' }}>
         <FadeIn>
-          <div style={{ textAlign:'center', marginBottom:56 }}>
+          <div style={{ textAlign:'center', marginBottom:48 }}>
             <div style={{ fontSize:9, letterSpacing:5, textTransform:'uppercase', color:'#B8781A', marginBottom:12, fontWeight:700 }}>Get in Touch</div>
             <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'clamp(34px,5vw,54px)', fontWeight:400, color:'#1A1208', marginBottom:14 }}>Ready to order?</h2>
-            <p style={{ color:'#8a7a6a', fontSize:15, lineHeight:1.75 }}>Browse our catalog, then send us a message. We will get back to you with pricing and delivery options.</p>
+            <p style={{ color:'#8a7a6a', fontSize:15, lineHeight:1.75 }}>Browse our catalog, then reach out via Instagram or the form below.</p>
           </div>
         </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <a href="https://www.instagram.com/home-of-wax-lebanon" target="_blank" rel="noopener noreferrer"
+            style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:14, padding:'22px 32px', background:'linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)', borderRadius:14, textDecoration:'none', marginBottom:32, transition:'transform 0.25s, box-shadow 0.25s', boxShadow:'0 8px 30px rgba(253,29,29,0.25)' }}
+            onMouseEnter={e=>{ e.currentTarget.style.transform='translateY(-3px)'; e.currentTarget.style.boxShadow='0 16px 40px rgba(253,29,29,0.35)'; }}
+            onMouseLeave={e=>{ e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 8px 30px rgba(253,29,29,0.25)'; }}>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            <div>
+              <div style={{ color:'#fff', fontWeight:700, fontSize:15, fontFamily:"'DM Sans',sans-serif", letterSpacing:1 }}>Order via Instagram</div>
+              <div style={{ color:'rgba(255,255,255,0.8)', fontSize:12, fontFamily:"'DM Sans',sans-serif" }}>@home-of-wax-lebanon</div>
+            </div>
+          </a>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:32 }}>
+            <div style={{ flex:1, height:1, background:'#E0D8CC' }}/>
+            <span style={{ fontSize:11, letterSpacing:2, textTransform:'uppercase', color:'#8a7a6a', fontWeight:600 }}>or send a message</span>
+            <div style={{ flex:1, height:1, background:'#E0D8CC' }}/>
+          </div>
+        </FadeIn>
+
         {submitted ? (
           <FadeIn>
             <div style={{ textAlign:'center', padding:'64px 40px', background:'#fff', borderRadius:16, border:'1px solid #EDE8DC', boxShadow:'0 8px 40px rgba(0,0,0,0.07)' }}>
@@ -49,7 +73,7 @@ export default function ContactSection() {
             </div>
           </FadeIn>
         ) : (
-          <FadeIn delay={0.12}>
+          <FadeIn delay={0.2}>
             <form onSubmit={handleSubmit} style={{ background:'#fff', borderRadius:16, padding:48, border:'1px solid #EDE8DC', boxShadow:'0 8px 40px rgba(0,0,0,0.07)' }}>
               {[['Name','text','Your full name','name'],['Email','email','your@email.com','email'],['Phone (optional)','tel','+961 xx xxx xxx','phone']].map(([label,type,placeholder,field]) => (
                 <div key={field} style={{ marginBottom:20 }}>
