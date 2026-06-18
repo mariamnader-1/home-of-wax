@@ -42,7 +42,7 @@ export default function ContactSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <a href="https://www.instagram.com/home-of-wax-lebanon" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.instagram.com/home_of_wax_lebanon" target="_blank" rel="noopener noreferrer"
             style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:14, padding:'22px 32px', background:'linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)', borderRadius:14, textDecoration:'none', marginBottom:32, transition:'transform 0.25s, box-shadow 0.25s', boxShadow:'0 8px 30px rgba(253,29,29,0.25)' }}
             onMouseEnter={e=>{ e.currentTarget.style.transform='translateY(-3px)'; e.currentTarget.style.boxShadow='0 16px 40px rgba(253,29,29,0.35)'; }}
             onMouseLeave={e=>{ e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 8px 30px rgba(253,29,29,0.25)'; }}>
